@@ -1,9 +1,14 @@
 # Student Management System Challenge
 
 ## About Project
-School Management System Challenge was developed using Angular, Bootstrap CSS, Asp.Net Core 3.1, and SQLite database. Talking about the project, it has all the essential features. This project contains only the admin side where an admin user can CRUD and manage students profile as well as setup user accounts for other admin users. The Admin plays the main role in the management of the system. In this project, all the main functions are performed from the Admin side.
+School Management System Challenge was developed using Angular, Bootstrap CSS, Asp.Net Core 3.1, and SQLite database. Talking about the project, it has all the essential features. This project contains only the admin side where an admin user can CRUD and manage students profile as well as setup user accounts for other admin users. The Admin plays the main role in the management of the system. In this project, all the main functions are performed from the Admin panel.
+
+Upon successful login, the administrator has full control of the system the system allowing the admin to perform features of CRUD operations as well as manage the students database. The system allows the user to add a new student profile, view and edit an existing profile, easily search for a profile using either the student's identification number and name (first or last), and delete from the list unwanted records.
+
+Further more, an existing user account can set up an account for a new user, edit and delete an account.
+
 
 ## How It Works
-The administrator has full control of the system, all the functions are performed from Admin panel upon successful login. The system allows the user to perform features of CRUD operations as well as manage the students database. Now talking about all the main functions of the system, that is the feature to add, edit, delete and view students, teachers, classes, hostels, streams, and management of Fees. While adding a student, the user has to provide full name, select gender, date of birth, attach photos, registration number, select class, stream, hostel, date of joining, category, academic year, total fees, advance fees, balance, and parents.
+The application comes in two folders, the frst folder named [StudentManagementSystem](https://github.com/Campilax/StudentManagementSystemChallenge/tree/main/StudentManagementSystem) is the frontend application developed using angular and bootstrap while the second folder named [StudentManagementSystemAPI](https://github.com/Campilax/StudentManagementSystemChallenge/tree/main/StudentManagementSystemAPI) is the backend application developed using Asp.Net Core and SQLite database.
 
-Likewise, while adding teachers, the user should provide name, select gender, age, phone number, email id, and staff number. For the payment of the fees, the fees amount should be declared from the fees structure section. All the payments are done through banks. So it is necessary to have bank section here. And the user can add bank name with an account number which is needed during payment of fees of a student. For the payment of fees, he/she has to select a student’s name, session, provide the paid amount, select bank branch, and remarks. Not just students and the teacher, here the user has to add subject and classes details too. Its too easy to add subjects and classes, he/she just has to provide a subject and class name. And talking about the streams its the also has the same procedure.
+Once the application has be cloned to your local computer and setup properly
