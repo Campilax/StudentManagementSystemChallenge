@@ -1,0 +1,206 @@
+<div class="max-width-1050px mx-auto">
+    <div class="bg-white datagrid-toolbar">
+        <div class="mt-0 ml-0 mr-0 p-0">
+            <div class="ml-3 mr-3 p-0">
+                <div class="row mt-0 mb-0 pt-1 pb-1">
+                    <div class="d-flex w-100 justify-content-between">
+                        <div class="w-60 d-flex align-items-center justify-content-start">
+                            <h2 class="mb-0 d-flex align-items-center mr-3">Students</h2>
+
+                            <div class="d-flex align-items-center justify-content-start font-size-13px mr-3">
+                                <div
+                                    class="form-control p-0 rounded-pill d-flex align-items-center justify-content-start min-width-250px w-100 bg-white mr-2">
+                                    <div type="button" (click)="searchOnClick()" data-toggle="tooltip"
+                                        data-placement="bottom" title="Search"
+                                        class="btn- bg-white icon-30 rounded-circle d-flex align-items-center justify-content-center m-0">
+                                        <i class="icon icon-14 search-black-icon m-0 p-0"></i>
+                                    </div>
+                                    <input type="text" (keyup)="searchOnEnter($event)"
+                                        placeholder="Search id"
+                                        [(ngModel)]="request.QueryString" value="{{request?.QueryString}}"
+                                        class="form-control w-100 max-width-400px font-size-12px border-0 pt-0 pl-2 pb-0 ml-0 mr-2 line-height-14px shadow-none m-0" />
+                                </div>
+                            </div>
+
+                            
+                            <div *ngIf="inProgress" class="d-flex align-items-center justify-content-center">
+                                <widget-loader size="20" color="black" isLoading="true"></widget-loader>
+                                <div class="ml-2 font-size-12px">Loading...</div>
+                            </div>
+                            
+                        </div>
+                        <div class="ml-3 min-width-350px">
+                            <div class="m-0 d-flex justify-content-end">
+
+                                <div class="d-flex align-items-center justify-content-start">
+                                    <button type="button" data-toggle="tooltip" data-placement="bottom"
+                                        title="Create a student profile"
+                                        class="d-flex icon-30 align-items-center justify-content-center btn btn-white rounded-circle border-0 shadow-none p-0 mb-0 mr-2"
+                                        (click)="create($event)">
+                                        <div class="icon icon-14 add-black-icon m-0"></div>
+                                    </button>
+
+                                    <button type="button" data-toggle="tooltip" data-placement="bottom" title="Edit"
+                                        class="d-flex icon-30 align-items-center justify-content-center btn btn-white rounded-circle border-0 shadow-none p-0 mb-0 mr-2"
+                                        (click)="edit($event)">
+                                        <div class="icon icon-14 edit-1-black-icon m-0"></div>
+                                    </button>
+
+                                    <button type="button" data-toggle="tooltip" data-placement="bottom" title="Delete"
+                                        class="d-flex icon-30 align-items-center justify-content-center btn btn-white rounded-circle border-0 shadow-none p-0 mb-0 mr-2"
+                                        (click)="delete($event)">
+                                        <div class="icon icon-14 delete-black-icon m-0"></div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="m-0 p-0 datagrid-list">
+        <div class="ml-4 mr-4 pl-0 pr-0">
+            <div class="">
+                <section class="datagrid-section p-0">
+                    <div class="p-0">
+                        <div>
+                            <table class="w-100 table table-hover datagrid students-table font-size-13px">
+                                <thead class="border-top-0">
+                                    <tr>
+                                        <th class="border-top-0 border-bottom-0">
+                                            <div class="d-flex pt-1 pb-1 text-secondary">
+                                                <div class="min-width-60px d-flex align-items-center">
+                                                    <div class="w-100">#</div>
+                                                </div>
+                                                <div class="min-width-150px d-flex align-items-center">
+                                                    <div class="w-100">Username</div>
+                                                </div>
+                                                <div class="min-width-150px d-flex align-items-center">
+                                                    <div class="w-100">First</div>
+                                                </div>
+                                                <div class="min-width-150px d-flex align-items-center">
+                                                    <div class="w-100">Last</div>
+                                                </div>
+                                                <div class="min-width-130px d-flex align-items-center">
+                                                    <div class="w-100">Age</div>
+                                                </div>
+                                                <div class="min-width-130px d-flex align-items-center">
+                                                    <div class="w-100">Career</div>
+                                                </div>
+                                                <div class="w-50"></div>
+                                                <div class="max-width-160px min-width-160px d-flex align-items-center">
+                                                    <div class="w-100">Actions</div>
+                                                </div>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngIf="((students != null) && (students?.length > 0))">
+                                    <tr class="cursor-pointer font-size-13px border-0" id="datagrid-row-{{row.Id}}"
+                                        (dbclick)="viewDetails()" (mousedown)="datagridRowSelect(row.Id, $event)"
+                                        *ngFor="let row of students; index as i">
+                                        <td class="p-2">
+                                            <div class="d-flex">
+                                                <div class="min-width-60px d-flex align-items-center">
+                                                    <div class="text-black-90">{{i+1}}</div>
+                                                </div>
+                                                <div class="min-width-150px d-flex align-items-center">
+                                                    <div class="text-black-90">{{row.UserName}}</div>
+                                                </div>
+                                                <div class="min-width-150px d-flex align-items-center">
+                                                    <div class="text-black-90">{{row.FirstName}}</div>
+                                                </div>
+                                                <div class="min-width-150px d-flex align-items-center">
+                                                    <div class="text-black-90">{{row.LastName}}</div>
+                                                </div>
+                                                <div class="min-width-130px d-flex align-items-center">
+                                                    <div class="text-black-90">{{row.Age}}</div>
+                                                </div>
+                                                <div class="min-width-130px d-flex align-items-center">
+                                                    <div class="text-black-90">{{row.Career}}</div>
+                                                </div>
+                                                <div class="w-50"></div>
+                                                <div
+                                                    class="max-width-160px min-width-160px d-flex justify-content-between align-items-center">
+                                                    <div class="d-flex justify-content-center align-items-center mr-2">
+                                                        <button (click)="editSelected($event)"
+                                                            class="btn btn-sm btn-warning p-1 mr-2 mb-0 d-flex justify-content-start align-items-center">
+                                                            <i class="icon icon-12 edit-1-black-icon mr-1"></i>
+                                                            <span>Edit</span>
+                                                        </button>
+                                                        <button (click)="deleteSelected($event)"
+                                                            class="btn btn-sm btn-danger p-1 mb-0 d-flex justify-content-start align-items-center">
+                                                            <i class="icon icon-12 delete-white-icon mr-1"></i>
+                                                            <span>Delete</span>
+                                                        </button>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-center align-items-center width-0px height-0px">
+                                                        <div
+                                                            class="d-flex justify-content-center align-items-center custom-control custom-checkbox mr-1">
+                                                            <input type="checkbox" class="custom-control-input"
+                                                                id="studentCheckBox{{i}}"
+                                                                (change)="datagridRowSelect(row.Id, $event)"
+                                                                value="{{row.Id}}">
+                                                            <label class="custom-control-label height-16px"
+                                                                for="studentCheckBox{{i}}"></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody *ngIf="((students == null) || (students?.length <= 0))">
+                                    <td class="d-flex align-items-center height-400px" colspan="5">
+                                        <div class="text-center mx-auto">
+                                            <div class="illust illust-150 file-searching-illust"></div>
+                                            <div class="text-center mx-auto">No records found.</div>
+                                        </div>
+                                    </td>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div *ngIf="((students != null) && (students?.length > 0))"
+                            class="d-flex justify-content-between font-size-13px mt-3">
+                            <div class="d-flex justify-content-start align-items-center">
+                                <button (click)="download($event)"
+                                    class="btn btn-sm btn-info pt-1 pl-2 pb-1 pr-2 mr-2 mb-0 d-flex justify-content-start align-items-center">
+                                    <i class="icon icon-12 edit-1-white-icon mr-1"></i>
+                                    <span>Download CSV</span>
+                                </button>
+                                <button (click)="create($event)"
+                                    class="btn btn-sm btn-success pt-1 pl-2 pb-1 pr-2 mb-0 d-flex justify-content-start align-items-center">
+                                    <i class="icon icon-12 add-white-icon mr-1"></i>
+                                    <span>Add Item</span>
+                                </button>
+                            </div>
+
+                            <div class="d-flex justify-content-end">
+                                <div class="mr-2 line-height-45px text-black-90">
+                                    Page {{currentPage}} of {{request.TotalPages}} from {{request.Total}} records
+                                </div>
+
+                                <div class="m-0 d-flex justify-content-start align-items-center">
+                                    <widget-pagination (onPageChange)="getAll($event)"
+                                        rowsPerPage="{{request?.RowsPerPage}}" totalPages="{{request?.TotalPages}}"
+                                        currentPage="{{request.PageNumber}}">
+                                    </widget-pagination>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>
+
+<widget-createoredit-student-component></widget-createoredit-student-component>
+
+<!-- DIALOGS -->
+<widget-confirm-dialog></widget-confirm-dialog>
+<widget-alert-dialog></widget-alert-dialog>
+<widget-toast></widget-toast>

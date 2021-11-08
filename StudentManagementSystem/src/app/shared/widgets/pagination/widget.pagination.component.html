@@ -1,0 +1,108 @@
+<div widget-pagination class="widget-pagination mr-0 mb-0">
+    <div *ngIf="type == PaginationTypeEnum.NUMBERED? true : false" class="pagination justify-content-center font-weight-bold text-black-90">
+        <div class="d-flex" *ngIf="(totalPages <= maxPages)">
+            <div class="page-item max-height-28px min-height-28px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}" *ngFor="let item of _pages;"
+                (click)="onClickPage(item)">
+                <span href="javascript:void(0)"
+                    class="page-link max-height-28px min-height-28px font-size-12px line-height-13px">{{item}}</span>
+            </div>
+        </div>
+        
+        <div class="d-flex" *ngIf="(pagesAfter <= 3)">
+            <div class="page-item max-height-28px min-height-28px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}" *ngFor="let item of _firstPagesAfter;"
+                (click)="onClickPage(item)">
+                <span href="javascript:void(0)"
+                    class="page-link max-height-28px min-height-28px font-size-12px line-height-13px">{{item}}</span>
+            </div>
+            <div class="page-item max-height-28px min-height-28px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}" *ngFor="let item of _pageSubset1After;"
+                (click)="onClickPage(item)">
+                <span href="javascript:void(0)"
+                    class="page-link max-height-28px min-height-28px font-size-12px line-height-13px">{{(item ==
+                    currentPage + 3)? item : "..."}}</span>
+            </div>
+            <div class="page-item max-height-28px min-height-28px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}" *ngFor="let item of _lastPagesAfter;"
+                (click)="onClickPage(item)">
+                <span href="javascript:void(0)"
+                    class="page-link max-height-28px min-height-28px font-size-12px line-height-13px">{{item}}</span>
+            </div>
+        </div>
+
+        <div class="d-flex" *ngIf="(pagesBefore <= 3)">
+            <div class="page-item max-height-28px min-height-28px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}" *ngFor="let item of _firstPagesBefore;"
+                (click)="onClickPage(item)">
+                <span href="javascript:void(0)"
+                    class="page-link max-height-28px min-height-28px font-size-12px line-height-13px">{{item}}</span>
+            </div>
+            <div class="page-item max-height-28px min-height-28px p-0 cursor-pointer"
+                *ngFor="let item of _pageSubsetBefore;" (click)="onClickPage(item)">
+                <span href="javascript:void(0)"
+                    class="page-link max-height-28px min-height-28px font-size-12px line-height-13px">...</span>
+            </div>
+            <div class="page-item max-height-28px min-height-28px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}" *ngFor="let item of _lastPagesBefore;"
+                (click)="onClickPage(item)">
+                <span href="javascript:void(0)"
+                    class="page-link max-height-28px min-height-28px font-size-12px line-height-13px">{{item}}</span>
+            </div>
+        </div>
+
+        <div class="d-flex" *ngIf="(pagesAfter > 3)">
+            <div class="page-item max-height-28px min-height-28px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}" *ngFor="let item of _firstPagesAfter;"
+                (click)="onClickPage(item, $event)">
+                <span href="javascript:void(0)"
+                    class="page-link max-height-28px min-height-28px font-size-12px line-height-13px">{{item}}</span>
+            </div>
+            <div class="page-item max-height-28px min-height-28px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}" *ngFor="let item of _pageEllipsisToggle1After;"
+                (click)="onClickPage(item)">
+                <span href="javascript:void(0)"
+                    class="page-link max-height-28px min-height-28px font-size-12px line-height-13px">{{(item ==
+                    currentPage + 3)? item : "..."}}</span>
+            </div>
+            <div class="page-item max-height-28px min-height-28px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}" *ngFor="let item of _middlePagesAfter;"
+                (click)="onClickPage(item)">
+                <span href="javascript:void(0)"
+                    class="page-link max-height-28px min-height-28px font-size-12px line-height-13px">{{item}}</span>
+            </div>
+            <div class="page-item max-height-28px min-height-28px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}" *ngFor="let item of _pageEllipsisToggle2After;"
+                (click)="onClickPage(item)">
+                <span href="javascript:void(0)"
+                    class="page-link max-height-28px min-height-28px font-size-12px line-height-13px">{{(item ==
+                    currentPage + 3)? item : "..."}}</span>
+            </div>
+            <div class="page-item max-height-28px min-height-28px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}" *ngFor="let item of _lastPagesAfter;"
+                (click)="onClickPage(item)">
+                <span href="javascript:void(0)"
+                    class="page-link max-height-28px min-height-28px font-size-12px line-height-13px">{{item}}</span>
+            </div>
+        </div>
+    </div>
+
+    <!--  -->
+    
+    <div *ngIf="type == PaginationTypeEnum.LEFTRIGHT? true : false" class="w-100 pagination font-weight-bold text-black-90">
+        <div class="w-100 d-flex justify-content-between">
+            <div class="page-item page-link d-flex justify-content-center align-items-center max-height-28px min-height-28px min-width-38px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}"
+                (click)="onClickPage((currentPage <= 1)? currentPage : currentPage - 1)">
+                <i href="javascript:void(0)"
+                    class="icon icon-18 back-black-icon font-size-12px line-height-13px"></i>
+            </div>
+            <div class="page-item page-link d-flex justify-content-center align-items-center max-height-28px min-height-28px min-width-38px p-0 cursor-pointer"
+                [ngClass]="{'active text-white': currentPage == item}"
+                (click)="onClickPage((currentPage >= totalPages)? totalPages : currentPage + 1)">
+                <i href="javascript:void(0)"
+                    class="icon icon-18 forward-black-icon font-size-12px line-height-13px">{{item}}</i>
+            </div>
+        </div>
+    </div>
+</div>

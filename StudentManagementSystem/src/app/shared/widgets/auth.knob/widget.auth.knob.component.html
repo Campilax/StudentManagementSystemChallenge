@@ -1,0 +1,45 @@
+<div class="widget-auth-knob mb-0">
+    <div class="dropdown">
+        <div class="cursor-pointer d-flex align-items-center" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="d-flex align-items-center cursor-pointer p-0 font-size-13px">
+                <div class="knob-avatar rounded-circle icon-40 position-relative m-0 overflow-hidden">
+                    <div class="bg-placeholder opacity-2 bg-dark bg-placeholder"></div>
+                    <div class="img-placeholder icon user-100-black-icon top-10px left-1px right-1px"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown-menu dropdown-menu-right m-0 p-0 shadow rounded-0">
+            <div class="card list-group pt-2 border-left-radius-0">
+                <div class="dropdown-item transparent font-size-13px d-flex align-items-center pt-2 pb-2">
+                    <div class="knob-avatar rounded-circle icon-60 position-relative mr-3 overflow-hidden">
+                        <div class="bg-placeholder opacity-2 bg-dark bg-placeholder"></div>
+                        <div class="img-placeholder icon user-1-black-icon-100 top-10px left-1px right-1px"></div>
+                    </div>
+                    <div class="mr-2">
+                        <div class="font-size-14px font-weight-bold">
+                            {{sessionAuthDetails?.FirstName + " " + sessionAuthDetails?.LastName}}
+                        </div>
+                        <div class="font-size-12px">
+                            <span class="line-height-13px ">{{sessionAuthDetails?.Email}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown-divider "></div>
+                <div (click)="onAccountSettingsClick($event)" class="dropdown-item cursor-pointer font-size-13px d-flex align-items-center pt-2 pb-2 ">
+                    <i class="icons icon-18px settings-black-icon mr-2 "></i>
+                    <span class="line-height-13px ">Account Settings</span>
+                </div>
+                <div (click)="onLogoutClick($event)" class="dropdown-item cursor-pointer font-size-13px d-flex align-items-center pt-2 pb-2 ">
+                    <i class="icons icon-18px logout-black-icon mr-2 "></i>
+                    <span class="line-height-13px ">Log Out</span>
+                </div>
+                <div class="dropdown-divider "></div>
+                <div (click)="onHelpClick($event)" class="dropdown-item cursor-pointer font-size-13px d-flex align-items-center pt-2 pb-2 ">
+                    <i class="icons icon-18px help-black-icon mr-2 "></i>
+                    <span class="line-height-13px ">Help</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

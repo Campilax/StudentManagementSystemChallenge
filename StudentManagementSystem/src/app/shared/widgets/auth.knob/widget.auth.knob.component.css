@@ -1,0 +1,57 @@
+widget-auth-knob {
+    outline: none;
+}
+
+.widget-auth-knob {
+    position: relative;
+    outline: none;
+}
+
+.widget-auth-knob .dropdown-menu>.dropdown-item.active,
+.widget-auth-knob .dropdown-menu>.dropdown-item:active {
+    color: unset !important;
+    background-color: #007bff00 !important;
+}
+
+.widget-auth-knob>* .knob-avatar {
+    position: relative;
+    outline: none;
+    overflow: hidden;
+}
+
+.widget-auth-knob>* .knob-avatar .bg-placeholder {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+
+.widget-auth-knob>* .knob-avatar .img-placeholder {
+    position: absolute;
+    margin: auto !important;
+    top: 5px;
+    left: -2px;
+    bottom: -5px;
+    right: -2px;
+    z-index: 1;
+}
+
+.widget-auth-knob .dropdown-menu.show {
+    margin-top: 16px !important;
+}
+
+.widget-auth-knob .dropdown-menu.show::before,
+.widget-auth-knob .dropdown-menu.show::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 15px;
+    z-index: 2;
+    height: 12px;
+    width: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: #ffffff;
+    transform: rotate(45deg);
+}

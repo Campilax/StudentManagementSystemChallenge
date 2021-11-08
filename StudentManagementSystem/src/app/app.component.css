@@ -1,0 +1,130 @@
+/* HEADER SECTION */
+.app-header {
+  /* position: fixed;
+    left: 1px;
+    top: 0px;
+    right: 0px;
+    z-index: 1005; */
+}
+
+.app-header .navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.app-header .container-fluid {
+  max-width: 1312px;
+  margin: auto !important;
+}
+
+.app-header .top-menubar {
+  outline: none;
+}
+
+.app-header .top-menubar > * .navbar-nav .nav-link {
+  font-size: 0.775rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 30px !important;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.app-header * .nav-link {
+  color: unset !important;
+}
+
+.app-header > * .navbar-nav .nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 30px !important;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.app-header .searchbar {
+  max-width: 1312px;
+  margin: 0.57rem auto !important;
+  line-height: unset !important;
+  padding: 0.3rem 0px;
+}
+
+.app-header .searchbar > * .navbar-nav .nav-link {
+  line-height: 16px !important;
+}
+
+.app-header .searchbar > * .navbar-nav .nav-link small {
+  line-height: unset !important;
+}
+
+.app-header .searchbar > * .navbar-nav .nav-link div {
+  text-transform: capitalize;
+  line-height: 20px !important;
+}
+
+.app-header .searchbar > * .searchbar-search {
+  width: 100%;
+}
+
+.app-header .searchbar > * .searchbar-menu {
+  min-width: 19rem;
+  padding: 0.2rem 0px 0.1rem 0px;
+}
+
+.app-widget-container {
+  top: -9999px;
+  left: -9999px;
+}
+
+/* SEARCHBAR MENU */
+.searchbar-menu {
+  outline: none;
+}
+
+.searchbar-menu .account-menu-item {
+  position: relative;
+}
+
+.searchbar-menu .account-menu-item::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 10px;
+  margin: auto;
+
+  width: 0;
+  height: 0;
+  border-top: 4px solid #88898a;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+
+  display: none;
+}
+
+/* FOOTER SECTION */
+footer {
+  display: block;
+}
+
+footer > * {
+  font-size: 12px !important;
+}
+
+footer > * .container {
+  max-width: 1100px;
+}
+
+footer > * .list-unstyled {
+  font-size: 12px !important;
+}
+
+footer .divider {
+  max-width: 1100px;
+  margin: 0px auto;
+}

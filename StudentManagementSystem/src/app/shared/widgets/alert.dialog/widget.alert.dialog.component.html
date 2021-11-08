@@ -1,0 +1,18 @@
+<div class="modal fade" data-backdrop="static" id="alertDialogModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="alert-box-heading"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body border-0 pt-0 pb-0">
+                <p class="font-size-13px" id="alert-box-label"></p>
+            </div>
+            <div class="modal-footer border-0 pt-2">
+                <button type="button" class="btn btn-nc-primary btn-sm mb-0" (click)="onOkay($event)">Okay, thanks!</button>
+            </div>
+        </div>
+    </div>
+</div>

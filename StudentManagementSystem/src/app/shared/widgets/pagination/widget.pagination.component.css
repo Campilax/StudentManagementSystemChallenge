@@ -1,0 +1,10 @@
+widget-pagination {
+  overflow: hidden;
+}
+
+.widget-pagination {
+  position: relative;
+  margin-right: 10px;
+  outline: none;
+  /* overflow: hidden; */
+}
