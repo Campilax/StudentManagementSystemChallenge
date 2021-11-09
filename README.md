@@ -19,3 +19,7 @@ The application comes in two folders, the frst folder named [StudentManagementSy
 
 ## How It Works
 Once the application has be cloned to your local computer and setup properly
+
+### Demo/Super Admin Account
+Username: super.admin
+Password: demodemo
