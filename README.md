@@ -29,6 +29,9 @@ The application is a full stack solution. It comes in two parts, the frst part i
   Apart from being fast, SQLite is self-contained, and this made it a great choice for this applications. It eliminates the need for applications to rely on external databases in order to function.
   
 - #### **Internet Information Services (IIS)**
+  IIS helps to isolate the applications to run in different user contexts, it allows straightforward configuration of per-directory and even per-file exec-type functionality.
+Also, it securely integrate user authentication from the web request through to network resources such as SQL Server, MSDTC, MSMQ, and file shares is assumed (this can be a pro or a con, but it's definitely a different model with its own advantages and disadvantages)
+IIS is a lot easier to install and maintain, since it's so tightly integrated with the Windows operating system.
 
 ### Demo Admin Account Credentials
 ```
@@ -37,6 +40,6 @@ Password: demodemo
 ```
 
 ### How to Run it
-Once the application has be cloned to your local computer and setup properly
+Once the application has be cloned to your local computer and properly setup (For more information on how to setup and run the front end application on your local computer, see the [README](https://github.com/Campilax/StudentManagementSystemChallenge/tree/main/StudentManagementSystem) here), launch your web browser and navigate to http://localhost:6060. Type in the above [Demo Admin Account Credentials] in their respective fields and login to use the application.
 
 
