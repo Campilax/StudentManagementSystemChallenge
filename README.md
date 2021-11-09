@@ -26,6 +26,8 @@ The application is a full stack solution. It comes in two parts, the frst part i
   ASP.NET Core is a popular choice but is definitely not alone in the world of backend development. It is similar to other frameworks such as Laravel (PHP), Spring (Java), Ruby on Rails (Ruby), Django (Python), and others. Each has its own advantages and disadvantages. I chose ASP.NET Core for this project as it is one of the top frameworks out there, runs on the powerful C# language, and has wonderful IDE support. <br />
   
 - #### **SQLite**
+  Apart from being fast, SQLite is self-contained, and this made it a great choice for this applications. It eliminates the need for applications to rely on external databases in order to function.
+  
 - #### **Internet Information Services (IIS)**
 
 ### Demo Admin Account Credentials
