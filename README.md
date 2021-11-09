@@ -40,6 +40,6 @@ Password: demodemo
 ```
 
 ### How to Run it
-Once the application has be cloned to your local computer and properly setup (For more information on how to setup and run the front end application on your local computer, see the [README](https://github.com/Campilax/StudentManagementSystemChallenge/tree/main/StudentManagementSystem) here), launch your web browser and navigate to http://localhost:6060. Type in the above **Demo Admin Account Credentials** in their respective fields and login to use the application.
+Once the application has be cloned to your local computer and properly setup (For more information on how to setup and run the front end application on your local computer, see the [README](https://github.com/Campilax/StudentManagementSystemChallenge/tree/main/StudentManagementSystem) here), launch your web browser and navigate to http://localhost:6060. Type in the above **Demo Admin Account Credentials** in their respective fields and login to start enjoying the application.
 
 
