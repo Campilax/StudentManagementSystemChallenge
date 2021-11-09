@@ -7,19 +7,23 @@ Upon successful login, the administrator has full control of the system the syst
 Further more, an existing user account can set up an account for a new user, edit and delete an account.
 
 ## About Project
-The application comes in two folders, the frst folder named [StudentManagementSystem](https://github.com/Campilax/StudentManagementSystemChallenge/tree/main/StudentManagementSystem) is the frontend application developed using angular and bootstrap while the second folder named [StudentManagementSystemAPI](https://github.com/Campilax/StudentManagementSystemChallenge/tree/main/StudentManagementSystemAPI) is the backend application developed using Asp.Net Core and SQLite database.
-
+The application is a full stack solution. It comes in two parts, the frst part is the [StudentManagementSystem](https://github.com/Campilax/StudentManagementSystemChallenge/tree/main/StudentManagementSystem) which is the frontend application. It was developed using angular and bootstrap while the second part is [StudentManagementSystemAPI](https://github.com/Campilax/StudentManagementSystemChallenge/tree/main/StudentManagementSystemAPI) which is the backend application developed using Asp.Net Core and SQLite database.
 
 ### Software Requirements
-- Angular 13.0.1
-- Bootstrap 4.6
-- Asp.Net Core 3.1<=5.00
-- SQLite
-- Internet Information Services (IIS)
+- #### **Angular 13.0.1**
+  Angular framework used for creating the interactive components of this application. It's full-featured JavaScript framework design enhances the simplicity and efficiency of this application and also in creating the dynamic, single page feature of this application, More so, it's supporting MVC (Model View Controller) programming structure is a key component of this application. <br />
+- #### **Bootstrap 4.6**
+- #### **Asp.Net Core 3.1<=5.00**
+- #### **SQLite**
+- #### **Internet Information Services (IIS)**
 
-## How It Works
-Once the application has be cloned to your local computer and setup properly
-
-### Demo/Super Admin Account
+### Demo Admin Account Credentials
+```
 Username: super.admin
 Password: demodemo
+```
+
+### How to Run it
+Once the application has be cloned to your local computer and setup properly
+
+
